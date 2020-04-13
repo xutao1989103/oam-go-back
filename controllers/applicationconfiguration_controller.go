@@ -18,6 +18,7 @@ package controllers
 
 import (
 	"context"
+	"log"
 
 	"github.com/go-logr/logr"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -41,7 +42,14 @@ func (r *ApplicationConfigurationReconciler) Reconcile(req ctrl.Request) (ctrl.R
 	_ = context.Background()
 	_ = r.Log.WithValues("applicationconfiguration", req.NamespacedName)
 
-	// your logic here
+	ctx := context.Background()
+	obja := &appsv1alpha1.ApplicationConfiguration{}
+
+	if err := r.Get(ctx, req.NamespacedName, obja); err != nil {
+		log.Println(err, "unable to fetch New Object")
+	} else {
+		log.Println("fetch New Object:", obja.Spec.Foo)
+	}
 
 	return ctrl.Result{}, nil
 }

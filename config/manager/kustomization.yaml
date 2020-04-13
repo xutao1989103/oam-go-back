@@ -5,4 +5,4 @@ kind: Kustomization
 images:
 - name: controller
   newName: xtaodocker/oam-go
-  newTag: latest
+  newTag: v1.0.0

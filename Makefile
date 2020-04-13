@@ -1,6 +1,6 @@
 
 # Image URL to use all building/pushing image targets
-IMG ?= xtaodocker/oam-go:latest
+IMG ?= xtaodocker/oam-go:v1.0.0
 # Produce CRDs that work back to Kubernetes 1.11 (no version conversion)
 CRD_OPTIONS ?= "crd:trivialVersions=true"
 
