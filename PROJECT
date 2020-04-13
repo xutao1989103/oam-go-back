@@ -1,0 +1,3 @@
+version: "2"
+domain: oam.io
+repo: github.com/xutao1989103/oam-go
